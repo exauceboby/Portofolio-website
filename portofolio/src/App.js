@@ -4,6 +4,5 @@ function App() {
             Subscribe 
         </div>
     )
-}
-
+} 
 export default App;
