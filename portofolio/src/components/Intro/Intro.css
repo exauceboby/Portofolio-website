@@ -95,3 +95,46 @@
     top: -18%;
     left: 56%;
 }
+
+@media screen and (max-width: 768px) {
+    .Intro {
+        flex-direction: column;
+        gap: 4rem;
+        height: 44rem;
+      }
+    
+      .i-right {
+        transform: scale(0.7);
+      }
+    
+      .i-name > :nth-child(1),
+      .i-name > :nth-child(2) {
+        font-size: 2.5rem;
+      }
+    
+      .i-name > :nth-child(3) {
+        font-size: 12px;
+      }
+    }
+  
+  @media screen and (max-width: 480px) {
+    .intro {
+      flex-direction: column;
+      gap: 4rem;
+      height: 44rem;
+
+    }
+  
+    .i-right {
+      transform: scale(0.7);
+    }
+  
+    .i-name > :nth-child(1),
+    .i-name > :nth-child(2) {
+      font-size: 2.5rem;
+    }
+  
+    .i-name > :nth-child(3) {
+      font-size: 12px;
+    }
+  }
