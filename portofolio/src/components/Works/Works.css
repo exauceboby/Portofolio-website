@@ -1,156 +1,50 @@
-
 .works {
-    padding: 0 3rem 0 3rem;
-    display: flex;
-    height: 90vh;
-    margin-top: 4rem;
-    align-items: center;
-  }
-  .awesome {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-  }
-  
-  .awesome > :nth-child(1) {
-    color: var(--black);
-    font-size: 2.5rem;
-    font-weight: bold;
-  }
-  .awesome > :nth-child(2) {
-    color: var(--orange);
-    font-size: 2.5rem;
-    font-weight: bold;
-  }
-  .awesome > :nth-child(3) {
-    color: var(--gray);
-    font-size: 14px;
-    margin-top: 1rem;
-  }
-  .s-button {
-    width: 8rem;
-    height: 2rem;
-    margin-top: 4rem;
-  }
-  
-  .w-right {
-    position: relative;
-  }
-  
-  .w-mainCircle {
-    left: 9rem;
-    position: relative;
-    width: 18rem;
-    height: 18rem;
-    border-radius: 100%;
-    box-shadow: var(--smboxShadow);
-    top: 2rem;
-    background: white;
-    /* darkMode */
-    z-index: 2;
-  }
-  .w-mainCircle > * {
-    position: absolute;
-  }
-  .w-mainCircle > :nth-child(1) {
-    top: -3rem;
-    left: 6rem;
-  }
-  .w-mainCircle > :nth-child(2) {
-    left: -3rem;
-    top: 5rem;
-  }
-  .w-mainCircle > :nth-child(3) {
-    left: 6rem;
-    top: 5rem;
-  }
-  .w-mainCircle > :nth-child(4) {
-    left: 15rem;
-    top: 5rem;
-  }
-  .w-mainCircle > :nth-child(5) {
-    left: 6rem;
-    top: 13rem;
-  }
-  .w-secCircle {
-    width: 6rem;
-    height: 6rem;
-    position: absolute;
-    border-radius: 100%;
-    border: 5px solid #ebebeb;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: "none";
-    box-shadow: var(--smboxShadow);
-    background: white;
-  }
-  
-  .w-secCircle > img {
-    transform: scale(0.6);
-  }
-  
-  .w-backCircle {
-    position: absolute;
-    height: 13rem;
-    width: 13rem;
-    border-radius: 100%;
-    z-index: 1;
-  }
-  .blueCircle {
-    background: #1949b8;
-    left: 18rem;
-    top: 0rem;
-  }
-  .yellowCircle {
-    background: #f5c32c;
-    left: 18rem;
-    top: 8rem;
-  }
-  
-  @media screen and (max-width: 480px) {
-    .works {
-      flex-direction: column;
-      height: 55rem;
-      padding: 0;
-      gap: 5rem;
-    }
-  
-    .w-right {
-      display: flex;
-      align-items: flex-start;
-      justify-content:start;
-      transform: scale(0.7);
-    }
-    .w-mainCircle{
-      position: static;
-    }
-    .w-backCircle{
-      left: 8rem!important;
-    }
-  
-  }
-  
-  @media screen and (max-width: 768px) {
-    .works {
-      flex-direction: column;
-      height: 55rem;
-      padding: 0;
-      gap: 5rem;
-    }
-  
-    .w-right {
-      display: flex;
-      align-items: flex-start;
-      justify-content:start;
-      transform: scale(0.7);
-    }
-    .w-mainCircle{
-      position: static;
-    }
-    .w-backCircle{
-      left: 8rem!important;
-    }
-  
-  }
-  
+  padding: 0 3rem;
+  display: flex;
+  min-height: 42rem;
+  margin-top: 4rem;
+  align-items: center;
+  gap: 5rem;
+}
+.works .awesome { flex: 1; }
+.w-right { flex: 1; position: relative; min-height: 30rem; }
+.w-mainCircle {
+  position: relative;
+  width: 27rem;
+  min-height: 27rem;
+  border-radius: 50%;
+  background: white;
+  box-shadow: var(--smboxShadow);
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 2.4rem;
+  align-content: center;
+}
+.w-secCircle {
+  border: 4px solid #ebebeb;
+  border-radius: 1rem;
+  padding: 1rem;
+  min-height: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background: white;
+  box-shadow: var(--smboxShadow);
+}
+.w-secCircle:last-child { grid-column: 1 / -1; }
+.w-secCircle strong { color: var(--orange); margin-bottom: 0.35rem; }
+.w-secCircle small { color: var(--gray); line-height: 1.4; }
+.w-backCircle { position: absolute; height: 13rem; width: 13rem; border-radius: 100%; z-index: 1; }
+.blueCircle { background: #1949b8; left: 18rem; top: -1rem; }
+.yellowCircle { background: #f5c32c; left: 18rem; top: 15rem; }
+@media screen and (max-width: 768px) {
+  .works { flex-direction: column; min-height: 58rem; padding: 0; gap: 3rem; }
+  .w-right { transform: scale(0.78); transform-origin: top center; }
+}
+@media screen and (max-width: 480px) {
+  .w-mainCircle { width: 24rem; min-height: 30rem; grid-template-columns: 1fr; }
+  .w-secCircle:last-child { grid-column: auto; }
+}
