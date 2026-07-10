@@ -1,64 +1,39 @@
 import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
 import './Testimonial.css'
-import profilePic1 from "../../img/user.png"
-import profilePic2 from "../../img/user.png"
-import profilePic3 from "../../img/user.png"
-import profilePic4 from "../../img/user.png"
-import { Pagination } from 'swiper/modules'
-import 'swiper/css/pagination'
-import'swiper/css'
 
-const Testimonial = () => {
-    const clients = [
-        {
-            img: profilePic1,
-            review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisiut aliquip ex ea commodo consequat."
-        },
-        {
-            img: profilePic2,
-            review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisiut aliquip ex ea commodo consequat."
-        },
-        {
-            img: profilePic3,
-            review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisiut aliquip ex ea commodo consequat."
-        },
-        {
-            img: profilePic4,
-            review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisiut aliquip ex ea commodo consequat."
-        },
-    ]
+const highlights = [
+  {
+    title: 'Full-Stack Software Engineering',
+    text: 'Experience building production applications with React, Next.js, Node.js, Express.js, PostgreSQL, MongoDB, REST APIs, JWT, and Socket.IO.'
+  },
+  {
+    title: 'IT & Digital Transformation',
+    text: 'Technology Officer experience covering IT strategy, government digital services, infrastructure, cybersecurity, and system administration.'
+  },
+  {
+    title: 'Education & Certifications',
+    text: 'Bachelor’s Degree and Associate Degree in Computer Networks and Telecommunications, plus CCNAv7, IT Essentials, and Get Connected certifications.'
+  }
+]
 
-    return (
-        <div className='t-wrapper' id='Testimonials'>
-            <div className='t-heading'>
-                <span>Clients always get</span>
-                <span>Exceptional Work</span>
-                <span>Form me...</span>
-                <div className='blur t-blur1' style={{ background: "var(--purple)" }}></div>
-                <div className='blur t-blur2' style={{ background: "skyblue" }}></div>
-            </div>
-
-            <Swiper 
-            modules={[Pagination]}
-            slidesPerView={1}
-            pagination={{clickable:true}}
-            >
-                {clients.map((client, index) => {
-                    return (
-                        <SwiperSlide key={index}>
-                            <div className='testimonial'>
-                            <img src={client.img} alt="" />
-                            <span>{client.review}</span>
-                            </div>
-                        </SwiperSlide>
-                    )
-                })}
-  
-
-            </Swiper>
-        </div>
-    )
-}
+const Testimonial = () => (
+  <div className='t-wrapper' id='Career'>
+    <div className='t-heading'>
+      <span>Professional</span>
+      <span>Background</span>
+      <span>Software engineering supported by infrastructure, data, and telecommunications experience.</span>
+      <div className='blur t-blur1' style={{ background: 'var(--purple)' }}></div>
+      <div className='blur t-blur2' style={{ background: 'skyblue' }}></div>
+    </div>
+    <div className='career-grid'>
+      {highlights.map((item) => (
+        <article className='career-card' key={item.title}>
+          <h3>{item.title}</h3>
+          <p>{item.text}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+)
 
 export default Testimonial
