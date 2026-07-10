@@ -10,29 +10,32 @@
     flex-direction: column;
     gap: 1rem;
 }
-
 .i-name{
     display: flex;
     flex-direction: column;
 }
-.i-name>:nth-child(1)
-{
+.i-name>:nth-child(1){
     color: var(--black);
     font-weight: bold;
     font-size: 3rem;
 }
-.i-name>:nth-child(2)
-{
+.i-name>:nth-child(2){
     color: var(--orange);
     font-weight: bold;
     font-size: 3rem;
 }
-.i-name>:nth-child(3)
-{
-    font-weight: 100;
+.i-name > strong {
+    color: var(--orange);
+    font-size: 1.35rem;
+    margin-top: 0.25rem;
+}
+.i-name>:nth-child(4){
+    font-weight: 400;
     font-size: 14px;
+    line-height: 1.65;
     color: var(--gray);
     margin-top: 10px;
+    max-width: 39rem;
 }
 .i-button{
     width: 6rem;
@@ -46,10 +49,13 @@
 .i-icons>*{
     transform: scale(0.5);
 }
+.i-icons a {
+    display: inline-flex;
+    align-items: center;
+}
 .i-icons>*:hover{
     cursor: pointer;
 }
-
 .i-right{
     flex: 1;
     position: relative;
@@ -58,26 +64,22 @@
     position: absolute;
     z-index: 1;
 }
-.i-right>:nth-child(1)
-{
+.i-right>:nth-child(1){
     transform: scale(0.69);
     left: -15%;
     top: -9%;
 }
-.i-right>:nth-child(2)
-{
+.i-right>:nth-child(2){
     transform: scale(0.67);
     left: -3rem;
     top: -4.6rem;
 }
-.i-right>:nth-child(3)
-{
+.i-right>:nth-child(3){
     transform: scale(0.85);
     left: 20%;
     top: -110px;
 }
-.i-right>:nth-child(4)
-{
+.i-right>:nth-child(4){
     transform: scale(0.6);
     left: -24%;
     top: -19px;
@@ -95,46 +97,25 @@
     top: -18%;
     left: 56%;
 }
-
 @media screen and (max-width: 768px) {
-    .Intro {
+    .intro {
         flex-direction: column;
         gap: 4rem;
         height: 44rem;
-      }
-    
-      .i-right {
-        transform: scale(0.7);
-      }
-    
-      .i-name > :nth-child(1),
-      .i-name > :nth-child(2) {
-        font-size: 2.5rem;
-      }
-    
-      .i-name > :nth-child(3) {
-        font-size: 12px;
-      }
     }
-  
-  @media screen and (max-width: 480px) {
+    .i-right { transform: scale(0.7); }
+    .i-name > :nth-child(1),
+    .i-name > :nth-child(2) { font-size: 2.5rem; }
+    .i-name > :nth-child(4) { font-size: 12px; }
+}
+@media screen and (max-width: 480px) {
     .intro {
       flex-direction: column;
       gap: 4rem;
       height: 44rem;
-
     }
-  
-    .i-right {
-      transform: scale(0.7);
-    }
-  
+    .i-right { transform: scale(0.7); }
     .i-name > :nth-child(1),
-    .i-name > :nth-child(2) {
-      font-size: 2.5rem;
-    }
-  
-    .i-name > :nth-child(3) {
-      font-size: 12px;
-    }
-  }
+    .i-name > :nth-child(2) { font-size: 2.5rem; }
+    .i-name > :nth-child(4) { font-size: 12px; }
+}
